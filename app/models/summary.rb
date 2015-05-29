@@ -7,27 +7,29 @@ class Summary
     @stop = stop
     @mpg = mpg.to_f
     @fuel_type = fuel_type
+    @trip = RoadTrip.new(start, stop)
+    @prices = FuelPriceData.new
   end
 
   def distance
-    trip = RoadTrip.new(@start, @stop)
-    trip.get_distance
+    @trip.get_distance
   end
 
   def distance_number
-    trip = RoadTrip.new(@start, @stop)
-    distance_string = trip.get_distance[0..-4]
+    distance_string = @trip.get_distance[0..-4]
     distance_string.gsub(",", "").to_f
   end
 
   def time
-    trip = RoadTrip.new(@start, @stop)
-    trip.get_time
+    @trip.get_time
   end
 
   def gas_price
-    prices = FuelPriceData.new
-    rate = prices.return_price(@fuel_type)
+    "$#{@prices.return_price(@fuel_type)}"
+  end
+
+  def gas_price_number
+    @prices.return_price(@fuel_type)
   end
 
   def gallons_needed
@@ -35,6 +37,6 @@ class Summary
   end
 
   def total_cost
-    "$#{(gallons_needed * gas_price).round(2)}"
+    "$#{(gallons_needed * gas_price_number).round(2)}"
   end
 end
