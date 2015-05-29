@@ -1,14 +1,15 @@
-require 'minitest/autorun'
-require 'minitest/pride'
-require '/Users/jreiff/Desktop/novel_api/novel_api/app/models/road_trip.rb'
+
+require 'test_helper'
+require 'road_trip.rb'
+
 
 class RoadTrip
   def get_data
-    JSON.parse(File.open("raleigh_portland.json").read)
+    JSON.parse(File.open("./test/models/raleigh_portland.json").read)
   end
 end
 
-class RoadTripTest < Minitest::Test
+class RoadTripTest < ActiveSupport::TestCase
   def test_can_be_created
     assert RoadTrip.new("Durham+NC", "Portland+OR")
   end

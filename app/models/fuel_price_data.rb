@@ -1,4 +1,6 @@
-require 'httparty' # required to make tests pass...
+
+# require 'httparty'
+
 class FuelPriceData
   attr_reader :data, :fuel_type
   def initialize
