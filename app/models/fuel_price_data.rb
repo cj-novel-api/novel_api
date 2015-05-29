@@ -1,12 +1,12 @@
-require 'httparty'
-class FuelPriceData #< ActiveRecord::Base
+require 'httparty' # required to make tests pass...
+class FuelPriceData
   attr_reader :data, :fuel_type
   def initialize
     @data = get_data
   end
 
   private def get_data
-    HTTParty.get('http://www.fueleconomy.gov/ws/rest/fuelprices').to_json
+    HTTParty.get('http://www.fueleconomy.gov/ws/rest/fuelprices')
   end
 
   def d
