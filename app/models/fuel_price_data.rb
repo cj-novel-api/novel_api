@@ -1,5 +1,6 @@
-require 'httparty'
-class FuelPriceData #< ActiveRecord::Base
+# require 'httparty'
+
+class FuelPriceData
   attr_reader :data, :fuel_type
   def initialize
     @data = get_data

@@ -1,17 +1,15 @@
-# ruby test/models/fuel_price_data_test.rb
-# require 'test_helper'
-require 'minitest/autorun'
-require 'minitest/pride'
-require '/Users/Cruz/Desktop/iron_yard/4_week/novel_api/app/models/fuel_price_data.rb'
 
+require 'test_helper'
+require 'fuel_price_data.rb'
+require 'minitest/pride'
 
 class FuelPriceData
   private def get_data
-    JSON.parse(File.open('/Users/Cruz/Desktop/iron_yard/4_week/novel_api/test/models/fuel_prices.json').read)
+    JSON.parse(File.open('./test/models/fuel_prices.json').read)
   end
 end
 
-class FuelPriceDataTest < Minitest::Test
+class FuelPriceDataTest < ActiveSupport::TestCase
 
   def test_the_truth
     assert true
