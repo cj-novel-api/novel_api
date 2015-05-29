@@ -1,0 +1,12 @@
+{
+  "fuelPrices": {
+    "cng":"2.11",
+    "diesel":"2.9",
+    "e85":"3.21",
+    "electric":"0.12",
+    "lpg":"2.92",
+    "midgrade":"2.95",
+    "premium":"3.11",
+    "regular":"2.74"
+  }
+}
