@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
-  # get 'price/gas' => 'price#gas'
+
   get 'gasprice' => 'price#index'
   get 'gasprice/:fuel_type' => 'price#show'
-  get 'roadtrip' => 'roadtrip#info'
-  # get 'price/roadtrip/:start/:stop/'
+  get 'trip/info' => 'trip#info'
+  get 'roadtrip/info' => 'trip#info'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
