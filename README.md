@@ -15,7 +15,7 @@ can give you the definitive answer.
 
 1. User inputs trip origin and destination. TripCompare calls Google's Directions
 API to return the total driving distance and duration of trip.
-2. User inputs car's MPG. TripCompare consults the API at [FuelEconomy](www.fueleconomy.gov)
+2. User inputs car's MPG. TripCompare consults the API at [FuelEconomy](http://www.fueleconomy.gov/feg/ws/)
 for local gas prices, determines how many gallons of gas will be necessary for
 the trip, and calculates the expected gas price.
 3. TripCompare calls Google's QPX Express API (if we can ever figure out how) to
