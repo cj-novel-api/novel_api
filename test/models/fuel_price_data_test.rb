@@ -21,21 +21,21 @@ class FuelPriceDataTest < ActiveSupport::TestCase
 
   def test_premium
     prices = FuelPriceData.new
-    assert_equal 3.11, prices.p
+    assert_equal 3.11, prices.return_price('p')
   end
 
   def test_regular
     prices = FuelPriceData.new
-    assert_equal 2.74, prices.r
+    assert_equal 2.74, prices.return_price('r')
   end
 
   def test_midgrade
     prices = FuelPriceData.new
-    assert_equal 2.95, prices.m
+    assert_equal 2.95, prices.return_price('m')
   end
 
   def test_diesel
     prices = FuelPriceData.new
-    assert_equal 2.9, prices.d
+    assert_equal 2.9, prices.return_price('d')
   end
 end

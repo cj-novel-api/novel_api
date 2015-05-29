@@ -1,8 +1,6 @@
 
-# require 'httparty'
-
 class FuelPriceData
-  attr_reader :data, :fuel_type
+  attr_reader :data
   def initialize
     @data = get_data
   end
@@ -11,19 +9,28 @@ class FuelPriceData
     HTTParty.get('http://www.fueleconomy.gov/ws/rest/fuelprices')
   end
 
-  def d
-    @data["fuelPrices"]["diesel"].to_f
-  end
+  # OWEN METHOD (mod CRUZ)
+  def return_price(fuel)
+    if fuel == "d" || fuel == "diesel"
 
-  def m
-    @data["fuelPrices"]["midgrade"].to_f
-  end
+      @data["fuelPrices"]["diesel"].to_f
 
-  def p
-    @data["fuelPrices"]["premium"].to_f
-  end
+    elsif fuel == "m" || fuel == 'midgrade'
 
-  def r
-    @data["fuelPrices"]["regular"].to_f
+      @data["fuelPrices"]["midgrade"].to_f
+
+    elsif fuel == "p" || fuel == 'premium'
+
+      @data["fuelPrices"]["premium"].to_f
+
+    elsif fuel == "r" || fuel == 'regular'
+
+      @data["fuelPrices"]["regular"].to_f
+
+    else
+
+      false
+
+    end
   end
 end
