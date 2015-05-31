@@ -6,10 +6,9 @@ $body-bg:                   #026411;
 $font-family-sans-serif:    'Noto Sans';
 $navbar-inverse-bg: 		    #222222;
 $navbar-inverse-link-color: #FEFEFE;
-$brand-black: 				      #C40507;
+$brand-primary: 				    #e67e22;
 $jumbotron-bg:              #FFFFFF;
-$btn-primary-bg:            #CE0101;
-$link-color:                #CE0101;
+
 @import 'bootstrap-sprockets';
 @import 'bootstrap';
 
@@ -26,15 +25,30 @@ $link-color:                #CE0101;
   line-height: 16px;
   height: 18px;
   padding-top:0px;
-  padding-bottom:0px;}
+  padding-bottom:0px;
+}
 
-.navbar {min-height:16px; padding-top:0px; padding-bottom:0px}
+.navbar {
+	min-height:16px;
+	padding-top:0px;
+	padding-bottom:0px
+}
 
-.home:hover, .home:active {background-color: #353334;}
+.home:hover, .home:active {
+	background-color: #353334;
+}
 
-.btn-primary.about {background-color: #CE0101;}
+.btn-primary.about {
+	background-color: #CE0101;
+}
 
-.btn-primary.about {font-size: 20px; padding-left: 5px; padding-right: 5px; padding-top: 0px; padding-bottom: 2px;}
+.btn-primary.about {
+	font-size: 20px;
+	padding-left: 5px;
+	padding-right: 5px;
+	padding-top: 0px;
+	padding-bottom: 2px;
+}
 
 p.ex {color: #026411;}
 a.one:link {color:#026420;text-decoration:none; padding: 0px;}
@@ -42,27 +56,28 @@ a.one:visited {color:#026411;text-decoration:none;}
 a.one:hover {color:white;text-decoration:none;}
 a.one {font-family: 'Nosifer';font-size:48px;}
 p.link {text-align: center;}
+
 #left {
-    border-radius:15px;
-    display:inline-block;
-    background:#ecf0f1;
-    max-width:40%;
-    height:150px;
-    line-height:30px;
-    margin:20px 0px 20px;
-    padding:30px 0px;
-    vertical-align:middle;
+  border-radius:15px;
+  display:inline-block;
+  background:#ecf0f1;
+  max-width:40%;
+  height:150px;
+  line-height:30px;
+  margin:20px 0px 20px;
+  padding:30px 0px;
+  vertical-align:middle;
 }
 
 #right {
-    border-radius:15px;
-    display:inline-block;
-    background:#ecf0f1;
-    max-width:40%;
-    height:150px;
-    line-height:30px;
-    margin:0px;
-    padding:30px 0px;
-    vertical-align:middle;
-    margin-left:10%;
+  border-radius:15px;
+  display:inline-block;
+  background:#ecf0f1;
+  max-width:40%;
+  height:150px;
+  line-height:30px;
+  margin:0px;
+  padding:30px 0px;
+  vertical-align:middle;
+  margin-left:10%;
 }
