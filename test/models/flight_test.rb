@@ -32,8 +32,9 @@ class FlightTest < ActiveSupport::TestCase
   def test_itinerary
     flight = Flight.new("RDU", "SFO", "2015-06-01")
 
-    assert_equal [{"leg"=>1, "origin"=>"RDU", "destination"=>"CLT", "flight_number"=>"US 1840"},
-    {"leg"=>2, "origin"=>"CLT", "destination"=>"SFO", "flight_number"=>"US 1799"}],
-    flight.itinerary
+    assert_equal [{"leg"=>1, "origin"=>"RDU", "destination"=>"CLT",
+        "flight_number"=>"US 1840", "departure_time"=>"2015-06-01 at 16:05-04:00"},
+        {"leg"=>2, "origin"=>"CLT", "destination"=>"SFO", "flight_number"=>"US 1799",
+        "departure_time"=>"2015-06-01 at 18:00-04:00"}], flight.itinerary
   end
 end

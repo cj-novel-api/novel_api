@@ -55,6 +55,16 @@ class Flight
     @page["trips"]["tripOption"][0]["slice"][0]["segment"][num]["leg"][0]["destination"]
   end
 
+  def departs_on(num)
+    day = @page["trips"]["tripOption"][0]["slice"][0]["segment"][num]["leg"][0]["departureTime"]
+    day[0..9]
+  end
+
+  def departs_at(num)
+    time = @page["trips"]["tripOption"][0]["slice"][0]["segment"][num]["leg"][0]["departureTime"]
+    time[11..-1]
+  end
+
   def itinerary
     counter = 0
     stops = []
@@ -64,6 +74,7 @@ class Flight
       next_stop["origin"] = origin(counter)
       next_stop["destination"] = destination(counter)
       next_stop["flight_number"] = "#{carrier(counter)} #{number(counter)}"
+      next_stop["departure_time"] = "#{departs_on(counter)} at #{departs_at(counter)}"
       stops << next_stop
       counter += 1
     end
