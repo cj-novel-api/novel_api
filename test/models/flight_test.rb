@@ -21,4 +21,11 @@ class FlightTest < ActiveSupport::TestCase
     assert_equal "US", flight.flight_carrier
     assert_equal "1840", flight.flight_number
   end
+
+  def test_can_get_origin_and_destination
+    flight = Flight.new("RDU", "SFO", "2015-06-01")
+
+    assert_equal "RDU", flight.flight_origin
+    assert_equal "CLT", flight.flight_destination
+  end
 end
