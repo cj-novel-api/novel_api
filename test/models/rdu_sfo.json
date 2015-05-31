@@ -1,0 +1,299 @@
+{
+ "kind": "qpxExpress#tripsSearch",
+ "trips": {
+  "kind": "qpxexpress#tripOptions",
+  "requestId": "hqUbHBD22VxQ3otvc0ME2s",
+  "data": {
+   "kind": "qpxexpress#data",
+   "airport": [
+    {
+     "kind": "qpxexpress#airportData",
+     "code": "CLT",
+     "city": "CLT",
+     "name": "Charlotte Douglas"
+    },
+    {
+     "kind": "qpxexpress#airportData",
+     "code": "RDU",
+     "city": "RDU",
+     "name": "Raleigh/Durham"
+    },
+    {
+     "kind": "qpxexpress#airportData",
+     "code": "SFO",
+     "city": "SFO",
+     "name": "San Francisco International"
+    }
+   ],
+   "city": [
+    {
+     "kind": "qpxexpress#cityData",
+     "code": "CLT",
+     "name": "Charlotte"
+    },
+    {
+     "kind": "qpxexpress#cityData",
+     "code": "RDU",
+     "name": "Raleigh/Durham"
+    },
+    {
+     "kind": "qpxexpress#cityData",
+     "code": "SFO",
+     "name": "San Francisco"
+    }
+   ],
+   "aircraft": [
+    {
+     "kind": "qpxexpress#aircraftData",
+     "code": "319",
+     "name": "Airbus A319"
+    },
+    {
+     "kind": "qpxexpress#aircraftData",
+     "code": "321",
+     "name": "Airbus A321"
+    }
+   ],
+   "tax": [
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "ZP",
+     "name": "US Flight Segment Tax"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "XF",
+     "name": "US Passenger Facility Charge"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "US_001",
+     "name": "US Transportation Tax"
+    },
+    {
+     "kind": "qpxexpress#taxData",
+     "id": "AY_001",
+     "name": "US September 11th Security Fee"
+    }
+   ],
+   "carrier": [
+    {
+     "kind": "qpxexpress#carrierData",
+     "code": "US",
+     "name": "US Airways, Inc."
+    }
+   ]
+  },
+  "tripOption": [
+   {
+    "kind": "qpxexpress#tripOption",
+    "saleTotal": "USD327.10",
+    "id": "SsYlXia2OvJMqZGU3AZ0fJ001",
+    "slice": [
+     {
+      "kind": "qpxexpress#sliceInfo",
+      "duration": 452,
+      "segment": [
+       {
+        "kind": "qpxexpress#segmentInfo",
+        "duration": 59,
+        "flight": {
+         "carrier": "US",
+         "number": "1840"
+        },
+        "id": "Gs79H7TAjG7G8kvr",
+        "cabin": "COACH",
+        "bookingCode": "V",
+        "bookingCodeCount": 3,
+        "marriedSegmentGroup": "0",
+        "leg": [
+         {
+          "kind": "qpxexpress#legInfo",
+          "id": "LVOCnp55V2Y3uQqa",
+          "aircraft": "319",
+          "arrivalTime": "2015-06-01T17:04-04:00",
+          "departureTime": "2015-06-01T16:05-04:00",
+          "origin": "RDU",
+          "destination": "CLT",
+          "originTerminal": "2",
+          "duration": 59,
+          "onTimePerformance": 91,
+          "mileage": 129,
+          "secure": true
+         }
+        ],
+        "connectionDuration": 56
+       },
+       {
+        "kind": "qpxexpress#segmentInfo",
+        "duration": 337,
+        "flight": {
+         "carrier": "US",
+         "number": "1799"
+        },
+        "id": "GDvOLCJ4hXTUruS1",
+        "cabin": "COACH",
+        "bookingCode": "V",
+        "bookingCodeCount": 3,
+        "marriedSegmentGroup": "0",
+        "leg": [
+         {
+          "kind": "qpxexpress#legInfo",
+          "id": "LzrmTX+g2CKx7U1T",
+          "aircraft": "321",
+          "arrivalTime": "2015-06-01T20:37-07:00",
+          "departureTime": "2015-06-01T18:00-04:00",
+          "origin": "CLT",
+          "destination": "SFO",
+          "destinationTerminal": "1",
+          "duration": 337,
+          "onTimePerformance": 57,
+          "mileage": 2290,
+          "meal": "Food for Purchase",
+          "secure": true
+         }
+        ]
+       }
+      ]
+     }
+    ],
+    "pricing": [
+     {
+      "kind": "qpxexpress#pricingInfo",
+      "fare": [
+       {
+        "kind": "qpxexpress#fareInfo",
+        "id": "AOjLPjXJ8Dyht1hec5RVxLK8kE/vxDqXr0OTOAogP4Vw",
+        "carrier": "US",
+        "origin": "RDU",
+        "destination": "SFO",
+        "basisCode": "VA00ZNG3"
+       }
+      ],
+      "segmentPricing": [
+       {
+        "kind": "qpxexpress#segmentPricing",
+        "fareId": "AOjLPjXJ8Dyht1hec5RVxLK8kE/vxDqXr0OTOAogP4Vw",
+        "segmentId": "GDvOLCJ4hXTUruS1",
+        "freeBaggageOption": [
+         {
+          "kind": "qpxexpress#freeBaggageAllowance",
+          "bagDescriptor": [
+           {
+            "kind": "qpxexpress#bagDescriptor",
+            "commercialName": "ASSISTIVE DEVICES",
+            "count": 0,
+            "subcode": "0GM"
+           },
+           {
+            "kind": "qpxexpress#bagDescriptor",
+            "commercialName": "INFANT CAR SEAT",
+            "count": 0,
+            "description": [
+             "Infant Car Seat"
+            ],
+            "subcode": "0G5"
+           },
+           {
+            "kind": "qpxexpress#bagDescriptor",
+            "commercialName": "STROLLER OR PUSHCHAIR",
+            "count": 0,
+            "description": [
+             "Stroller/Pushchair"
+            ],
+            "subcode": "0F4"
+           }
+          ],
+          "pieces": 0
+         }
+        ]
+       },
+       {
+        "kind": "qpxexpress#segmentPricing",
+        "fareId": "AOjLPjXJ8Dyht1hec5RVxLK8kE/vxDqXr0OTOAogP4Vw",
+        "segmentId": "Gs79H7TAjG7G8kvr",
+        "freeBaggageOption": [
+         {
+          "kind": "qpxexpress#freeBaggageAllowance",
+          "bagDescriptor": [
+           {
+            "kind": "qpxexpress#bagDescriptor",
+            "commercialName": "ASSISTIVE DEVICES",
+            "count": 0,
+            "subcode": "0GM"
+           },
+           {
+            "kind": "qpxexpress#bagDescriptor",
+            "commercialName": "INFANT CAR SEAT",
+            "count": 0,
+            "description": [
+             "Infant Car Seat"
+            ],
+            "subcode": "0G5"
+           },
+           {
+            "kind": "qpxexpress#bagDescriptor",
+            "commercialName": "STROLLER OR PUSHCHAIR",
+            "count": 0,
+            "description": [
+             "Stroller/Pushchair"
+            ],
+            "subcode": "0F4"
+           }
+          ],
+          "pieces": 0
+         }
+        ]
+       }
+      ],
+      "baseFareTotal": "USD284.65",
+      "saleFareTotal": "USD284.65",
+      "saleTaxTotal": "USD42.45",
+      "saleTotal": "USD327.10",
+      "passengers": {
+       "kind": "qpxexpress#passengerCounts",
+       "adultCount": 1
+      },
+      "tax": [
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "US_001",
+        "chargeType": "GOVERNMENT",
+        "code": "US",
+        "country": "US",
+        "salePrice": "USD21.35"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "AY_001",
+        "chargeType": "GOVERNMENT",
+        "code": "AY",
+        "country": "US",
+        "salePrice": "USD5.60"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "XF",
+        "chargeType": "GOVERNMENT",
+        "code": "XF",
+        "country": "US",
+        "salePrice": "USD7.50"
+       },
+       {
+        "kind": "qpxexpress#taxInfo",
+        "id": "ZP",
+        "chargeType": "GOVERNMENT",
+        "code": "ZP",
+        "country": "US",
+        "salePrice": "USD8.00"
+       }
+      ],
+      "fareCalculation": "RDU US X/CLT US SFO Q RDUSFO13.95 270.70VA00ZNG3 USD 284.65 END ZP RDU CLT XT 21.35US 8.00ZP 5.60AY 7.50XF RDU4.50 CLT3.00",
+      "latestTicketingTime": "2015-06-01T16:04-04:00",
+      "ptc": "ADT"
+     }
+    ]
+   }
+  ]
+ }
+}
