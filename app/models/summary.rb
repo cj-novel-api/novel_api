@@ -2,13 +2,14 @@ class Summary
 
   attr_reader :start, :stop, :mpg, :fuel_type
 
-  def initialize(start, stop, mpg, fuel_type)
+  def initialize(start, stop, mpg, fuel_type, start_code, end_code, date)
     @start = start
     @stop = stop
     @mpg = mpg.to_f
     @fuel_type = fuel_type
     @trip = RoadTrip.new(start, stop)
     @prices = FuelPriceData.new
+    @flight = Flight.new(start_code, end_code, date)
   end
 
   def distance
@@ -38,5 +39,13 @@ class Summary
 
   def total_cost
     "$#{(gallons_needed * gas_price_number).round(2)}"
+  end
+
+  def itinerary
+    @flight.itinerary
+  end
+
+  def price
+    @flight.price
   end
 end
