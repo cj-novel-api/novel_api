@@ -33,23 +33,40 @@ class Flight
     :headers => { 'Content-Type' => 'application/json' })
   end
 
-  def flight_price
-    @page["trips"]["tripOption"][0]["saleTotal"]
+  def price
+    cost = @page["trips"]["tripOption"][0]["saleTotal"]
+    new_cost = cost[3..-1]
+    "$#{new_cost}"
   end
 
-  def flight_carrier
-    @page["trips"]["tripOption"][0]["slice"][0]["segment"][0]["flight"]["carrier"]
+  def carrier(num)
+    @page["trips"]["tripOption"][0]["slice"][0]["segment"][num]["flight"]["carrier"]
   end
 
-  def flight_number
-    @page["trips"]["tripOption"][0]["slice"][0]["segment"][0]["flight"]["number"]
+  def number(num)
+    @page["trips"]["tripOption"][0]["slice"][0]["segment"][num]["flight"]["number"]
   end
 
-  def flight_origin
-    @page["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["origin"]
+  def origin(num)
+    @page["trips"]["tripOption"][0]["slice"][0]["segment"][num]["leg"][0]["origin"]
   end
 
-  def flight_destination
-    @page["trips"]["tripOption"][0]["slice"][0]["segment"][0]["leg"][0]["destination"]
+  def destination(num)
+    @page["trips"]["tripOption"][0]["slice"][0]["segment"][num]["leg"][0]["destination"]
+  end
+
+  def itinerary
+    counter = 0
+    stops = []
+    until @page["trips"]["tripOption"][0]["slice"][0]["segment"][counter] == nil
+      next_stop = {}
+      next_stop["leg"] = counter+1
+      next_stop["origin"] = origin(counter)
+      next_stop["destination"] = destination(counter)
+      next_stop["flight_number"] = "#{carrier(counter)} #{number(counter)}"
+      stops << next_stop
+      counter += 1
+    end
+    stops
   end
 end

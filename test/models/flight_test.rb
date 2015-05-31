@@ -14,18 +14,26 @@ class FlightTest < ActiveSupport::TestCase
     assert Flight.new("RDU", "SFO", "2015-06-01")
   end
 
-  def test_can_get_flight_info
+  def test_can_get_info
     flight = Flight.new("RDU", "SFO", "2015-06-01")
 
-    assert_equal "USD327.10", flight.flight_price
-    assert_equal "US", flight.flight_carrier
-    assert_equal "1840", flight.flight_number
+    assert_equal "$327.10", flight.price
+    assert_equal "US", flight.carrier(0)
+    assert_equal "1840", flight.number(0)
   end
 
   def test_can_get_origin_and_destination
     flight = Flight.new("RDU", "SFO", "2015-06-01")
 
-    assert_equal "RDU", flight.flight_origin
-    assert_equal "CLT", flight.flight_destination
+    assert_equal "RDU", flight.origin(0)
+    assert_equal "CLT", flight.destination(0)
+  end
+
+  def test_itinerary
+    flight = Flight.new("RDU", "SFO", "2015-06-01")
+
+    assert_equal [{"leg"=>1, "origin"=>"RDU", "destination"=>"CLT", "flight_number"=>"US 1840"},
+    {"leg"=>2, "origin"=>"CLT", "destination"=>"SFO", "flight_number"=>"US 1799"}],
+    flight.itinerary
   end
 end
