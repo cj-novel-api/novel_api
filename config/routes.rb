@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'trip/info' => 'trip#info'
   get 'roadtrip/info' => 'trip#info'
   get 'results' => 'summary#show'
+  get 'flight/info' => 'flight#info'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
