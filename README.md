@@ -13,7 +13,7 @@ can give you the definitive answer.
 
 ###How it does it
 
-Deals on Wheels mashes up information from three other APIs:
+Deals on Wheels mashes up information from three other APIs
 1. [Google Directions](https://developers.google.com/maps/documentation/directions/)
   * Calculates driving distance and trip duration
 2. [Google QPX](https://developers.google.com/qpx-express/)
