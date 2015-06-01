@@ -37,7 +37,7 @@ class Summary
     (distance_number/@mpg).round(2)
   end
 
-  def total_cost
+  def drive_cost
     "$#{(gallons_needed * gas_price_number).round(2)}"
   end
 
@@ -45,7 +45,27 @@ class Summary
     @flight.itinerary
   end
 
-  def price
+  def flight_cost
     @flight.price
+  end
+
+  def flight_time
+    @flight.total_time
+  end
+
+  def difference
+    "$#{(flight_cost[1..-1].to_f - drive_cost[1..-1].to_f).round(2).abs}"
+  end
+
+  def recommendation
+    f_cost = flight_cost[1..-1].to_f.round(2)
+    d_cost = drive_cost[1..-1].to_f.round(2)
+    if f_cost > d_cost
+      "Do you really want to spend more money on a flight?"
+    elsif f_cost < d_cost
+      "Do you really want to spend more money driving?"
+    else
+      "Same price, just look at the time difference!"
+    end
   end
 end

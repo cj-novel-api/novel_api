@@ -65,6 +65,12 @@ class Flight
     time[11..-1]
   end
 
+  def total_time
+    minutes = @page["trips"]["tripOption"][0]["slice"][0]["duration"].to_f
+    hours = (minutes/60.0).round(2)
+    "#{hours} hours"
+  end
+
   def itinerary
     counter = 0
     stops = []

@@ -4,6 +4,9 @@ json.driving_distance @summary.distance
 json.driving_time @summary.time
 json.total_gallons @summary.gallons_needed
 json.price_per_gallon @summary.gas_price
-json.driving_cost @summary.total_cost
+json.driving_cost @summary.drive_cost
 json.flight_itinerary @summary.itinerary
-json.flight_cost @summary.price
+json.flight_cost @summary.flight_cost
+json.flight_time @summary.flight_time
+json.difference @summary.difference
+json.message @summary.recommendation

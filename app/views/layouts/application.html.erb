@@ -1,37 +1,27 @@
 <!DOCTYPE html>
 <html>
   <head>
-
     <% #logo %>
     <link rel="icon" href="http://upload.wikimedia.org/wikipedia/commons/c/cd/Facebook_logo_(square).png">
-
     <title>Drive Api</title>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
-
   <%= render 'layouts/header' %>
-
-  <body style="padding-top:60px; padding-bottom:0px; padding-right: 100px; padding-left: 100px;">
-    <div class="container-fluid">
-      <div class="jumbotron" style="padding-top:5px;border-radius: 25px;">
+  <body style="padding:60px 8% 0px;">
+      <div class="jumbotron" style="padding-top:20px;border-radius: 25px;">
         <center>
           <%= yield %>
         </center>
       </div>
-    </div>
   </body>
-
   <p class="link">
     <b>
-      <a class="one" href="/error" target="_blank">Whoa!</a>
+      <a class="one" href="/error.json" target="_blank">Whoa!</a>
     </b>
   </p>
-
   <p align="center" style="margin-bottom:40px;color:white;font-size:10px">© 2015 All Rights Reserved.</p>
-
   <%= render 'layouts/footer' %>
-
 </html>

@@ -1,0 +1,2 @@
+json.ERROR 404
+json.MESSAGE ['FORBIDDEN', 'ABORT NOW']
