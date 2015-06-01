@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   get 'about' => 'pages#about'
   get 'error' => 'pages#error'
   get 'gasprice' => 'price#index'
+  get 'gasprice/index' => 'price#index'
   get 'gasprice/:fuel_type' => 'price#show'
   get 'trip/info' => 'trip#info'
   get 'roadtrip/info' => 'trip#info'
