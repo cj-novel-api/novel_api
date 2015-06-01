@@ -71,6 +71,10 @@ class Flight
     "#{hours} hours"
   end
 
+  def ticket_before
+    @page["trips"]["tripOption"][0]["pricing"][0]["latestTicketingTime"]
+  end
+
   def itinerary
     counter = 0
     stops = []
