@@ -22,6 +22,15 @@ class RoadTrip
     @page["routes"][0]["legs"][0]["duration"]["text"]
   end
 
+  def total_time_in_hours
+    time_string = get_time
+    days_string = time_string[/\d+ day/]
+    hours_string = time_string[/\d+ hour/]
+    hours_from_days = days_string[/\d+/].to_f*24 rescue 0
+    hours_from_hours = hours_string[/\d+/].to_f
+    total_hours = hours_from_days + hours_from_hours
+  end
+
   def start_location_lat
     @page["routes"][0]["legs"][0]["start_location"]["lat"]
   end

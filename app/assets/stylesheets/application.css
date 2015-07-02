@@ -13,3 +13,30 @@
  *= require_tree .
  *= require_self
  */
+
+#worm{
+  margin:auto;
+  display:block;
+  background:black;
+}
+
+h1 {
+  position: relative;
+  color: white !important;
+  top: -350px;
+  font-size: 100px !important;
+  margin: 0;
+  line-height: 0;
+}
+
+p#subheading {
+  position: relative;
+  top: -200px;
+  color: white;
+  margin: 0;
+  line-height: 0;
+}
+
+h1, p#subheading {
+  text-shadow: 0 0 10px black;
+}

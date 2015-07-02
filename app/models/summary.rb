@@ -22,7 +22,7 @@ class Summary
     distance_string.gsub(",", "").to_f
   end
 
-  def time
+  def drive_time
     @trip.get_time
   end
 
@@ -55,22 +55,54 @@ class Summary
   end
 
   def difference
-    "$#{(flight_cost[1..-1].to_f - drive_cost[1..-1].to_f).round(2).abs}"
+    difference = flight_cost[1..-1].to_f - drive_cost[1..-1].to_f
+    if difference > 0 # flight is more expensive
+      "flight is more expensive by $#{(flight_cost[1..-1].to_f - drive_cost[1..-1].to_f).round(2).abs}"
+    elsif difference < 0 # drive is more expensive
+      "drive is more expensive by $#{(flight_cost[1..-1].to_f - drive_cost[1..-1].to_f).round(2).abs}"
+    else
+      "They cost the same"
+    end
+
+    # "$#{(flight_cost[1..-1].to_f - drive_cost[1..-1].to_f).round(2).abs}"
   end
 
+  def time_difference
+    difference = @flight.total_time_in_hours - @trip.total_time_in_hours
+    if difference > 0 # flight is longer
+      "Flight is #{difference.abs} hours longer"
+    elsif difference < 0 # drive is longer
+      "Drive is #{difference.abs} hours longer"
+    else
+      "Time is the same"
+    end
+  end
+
+  #this method is necessary. It is used in the flight_summary method
   def ticket_before
     @flight.ticket_before
   end
 
-  def recommendation
+  def cost_message
     f_cost = flight_cost[1..-1].to_f.round(2)
     d_cost = drive_cost[1..-1].to_f.round(2)
     if f_cost > d_cost
-      "Do you really want to spend more money on a flight? Look at the time difference."
+      "Do you really want to spend more money flying?"
     elsif f_cost < d_cost
-      "Do you really want to spend more money driving? Look at the time difference."
+      "Do you really want to spend more money driving?"
     else
       "Same price, just look at the time difference!"
+    end
+  end
+
+  def time_message
+    difference = @flight.total_time_in_hours - @trip.total_time_in_hours
+    if difference > 0 # flight is longer
+      "Do you really want to spend more time flying?"
+    elsif difference < 0 # drive is longer
+      "Do you really want to spend more time driving?"
+    else
+      "Time is the same. Look at the cost difference."
     end
   end
 
@@ -79,7 +111,7 @@ class Summary
       "total_gallons" => gallons_needed,
       "fuel_type" => fuel_type,
       "price_per_gallon" => gas_price,
-      "driving_time" => time,
+      "driving_time" => drive_time,
       "driving_cost" => drive_cost
     }
   end

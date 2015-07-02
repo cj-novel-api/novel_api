@@ -71,6 +71,11 @@ class Flight
     "#{hours} hours"
   end
 
+  def total_time_in_hours
+    minutes = @page["trips"]["tripOption"][0]["slice"][0]["duration"].to_f
+    (minutes/60.0).round(2)
+  end
+
   def ticket_before
     @page["trips"]["tripOption"][0]["pricing"][0]["latestTicketingTime"]
   end

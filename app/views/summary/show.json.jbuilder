@@ -3,5 +3,7 @@ json.stop @summary.stop
 json.leaving_on @summary.date
 json.drive_summary @summary.drive_summary
 json.flight_summary @summary.flight_summary
-json.difference @summary.difference
-json.message @summary.recommendation
+json.cost_difference @summary.difference
+json.time_difference @summary.time_difference
+json.cost_message @summary.cost_message
+json.time_message @summary.time_message

@@ -8,14 +8,17 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
     <%= csrf_meta_tags %>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    <script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
   </head>
   <%= render 'layouts/header' %>
   <body style="padding:60px 8% 0px;">
-      <div class="jumbotron" style="padding-top:20px;border-radius: 25px;">
-        <center>
-          <%= yield %>
-        </center>
-      </div>
+    <script>rainbowWorm();</script>
+    <div class="jumbotron" style="padding-top:20px;border-radius: 25px;">
+      <center>
+        <%= yield %>
+      </center>
+    </div>
   </body>
   <p class="link">
     <b>

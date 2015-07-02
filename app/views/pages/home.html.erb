@@ -1,5 +1,6 @@
-<h1 style="margin-bottom:40px">Welcome</h1>
-<p style="margin-bottom:40px;font-size:25px">Planning a long trip?</p>
+<h1>Welcome</h1>
+<p id="subheading" style="margin-bottom:40px;font-size:25px">Planning a long trip?</p>
+
 
 <form action="results.json">
 
@@ -21,7 +22,15 @@
     </div>
     <div class="container" id="right">
       <p style="display:inline-block;font-size:length">Enter Your Fuel Type</p>
-      <p><input type="text" name="fuel_type"></input></p>
+      <!-- <p><input type="text" name="fuel_type"></input></p> -->
+      <p>
+        <select name="fuel_type" style="width:236px;height:30px;">
+          <option value="">
+          <%  @fuel_types.each do |fuel_type| %>
+            <option value="<%= fuel_type %>"><%= fuel_type.capitalize %></option>
+          <% end %>
+        </select>
+      </p>
     </div>
   </div>
 
@@ -40,6 +49,13 @@
     <div class="container" id="center">
       <p>Enter Date of Travel (YYYY-MM-DD)</p>
       <p><input type="text" name="date"></input></p>
+      <!-- <p><%= date_select :date_1, nil, {:start_year => Date.current.year, :end_year => Date.current.year + 2} %></p>   --> -->
+      <!-- <p>Date: <input type="text" id="datepicker"></p>
+      <script>
+        $(function() {
+          $("#datepicker").datepicker();
+        });
+      </script> -->
     </div>
   </div>
 
