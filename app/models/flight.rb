@@ -13,13 +13,11 @@ class Flight
       :headers => { 'Content-Type' => 'application/json' },
       :body => {
         "request": {
-          "slice": [
-            {
-              "origin": "#{@start_code}",
-              "destination": "#{@end_code}",
-              "date": "#{@date}"
-            }
-          ],
+          "slice": [{
+            "origin": "#{@start_code}",
+            "destination": "#{@end_code}",
+            "date": "#{@date}"
+          }],
           "passengers": {
             "adultCount": 1,
             "infantInLapCount": 0,
