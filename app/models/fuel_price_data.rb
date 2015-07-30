@@ -5,9 +5,6 @@ class FuelPriceData
     @data = get_data
   end
 
-  private def get_data
-    HTTParty.get('http://www.fueleconomy.gov/ws/rest/fuelprices')
-  end
 
   # OWEN METHOD (mod CRUZ)
   def return_price(fuel)
@@ -33,4 +30,11 @@ class FuelPriceData
 
     end
   end
+
+  private
+
+  def get_data
+    HTTParty.get('http://www.fueleconomy.gov/ws/rest/fuelprices')
+  end
+
 end
