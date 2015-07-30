@@ -14,16 +14,10 @@ class Flight
       :body => {
         "request": {
           "slice": [{
-            "origin": "#{@start_code}",
-            "destination": "#{@end_code}",
-            "date": "#{@date}"
+            "origin": "#{@start_code}","destination": "#{@end_code}","date": "#{@date}"
           }],
           "passengers": {
-            "adultCount": 1,
-            "infantInLapCount": 0,
-            "infantInSeatCount": 0,
-            "childCount": 0,
-            "seniorCount": 0
+            "adultCount": 1,"infantInLapCount": 0,"infantInSeatCount": 0,"childCount": 0,"seniorCount": 0
           },
           "solutions": 1,
           "refundable": false
