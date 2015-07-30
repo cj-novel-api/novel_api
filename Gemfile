@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'addressable'
 gem 'puma'
 gem 'd3_rails'
 gem 'rails', '4.2.1'

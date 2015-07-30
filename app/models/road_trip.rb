@@ -1,4 +1,5 @@
 # require 'httparty'
+require 'addressable/uri'
 
 class RoadTrip
 
@@ -11,7 +12,17 @@ class RoadTrip
   end
 
   def get_data
-    HTTParty.get("https://maps.googleapis.com/maps/api/directions/json?origin=#{@start}&destination=#{@stop}&sensor=false&key=#{ENV["GOOGLE_KEY"]}")
+    root_url = "https://maps.googleapis.com/maps/api/directions/json"
+    link = root_url + "?origin=#{@start}&destination=#{@stop}&sensor=false&key=#{ENV["GOOGLE_KEY"]}"
+    uri = Addressable::URI.parse(root_url)
+    uri.query_values = {
+      :origin => @start,
+      :destination => @stop,
+      :sensor => false,
+      :key => ENV["GOOGLE_KEY"]
+    }
+    link = uri.to_s
+    HTTParty.get(link)
   end
 
   def get_distance
