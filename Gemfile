@@ -14,6 +14,10 @@ gem 'masonry-rails', '~> 0.2.0'
 gem 'will_paginate', '~> 3.0.5'
 gem 'will_paginate-bootstrap'
 gem 'sdoc', '~> 0.4.0', group: :doc
+group :production do
+  gem 'pg'
+  gem 'rails_12factor'
+end
 group :development, :test do
   gem 'sqlite3'
   gem 'byebug'
