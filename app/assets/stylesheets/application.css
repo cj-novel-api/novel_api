@@ -14,6 +14,8 @@
  *= require_self
  */
 
+@import url(http://fonts.googleapis.com/css?family=Playball);
+
 #worm{
   margin:auto;
   display:block;
