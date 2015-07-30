@@ -7,13 +7,6 @@ class Flight
     @page = get_data
   end
 
-  private def get_data
-    HTTParty.post("https://www.googleapis.com/qpxExpress/v1/trips/search?key=#{ENV["GOOGLE_KEY"]}",
-      :headers => { 'Content-Type' => 'application/json' },
-      :body => {"request"=>{"slice"=>[{"origin"=>"#{@start_code}","destination"=>"#{@end_code}","date"=>"#{@date}"}],"passengers"=>{"adultCount"=>1,"infantInLapCount"=>0,"infantInSeatCount"=>0,"childCount"=>0,"seniorCount"=>0},"solutions"=>1,"refundable"=>false}}.to_json
-    )
-  end
-
   def price
     cost = @page["trips"]["tripOption"][0]["saleTotal"]
     new_cost = cost[3..-1]
@@ -76,4 +69,14 @@ class Flight
     end
     stops
   end
+
+  private
+
+  def get_data
+    HTTParty.post("https://www.googleapis.com/qpxExpress/v1/trips/search?key=#{ENV["GOOGLE_KEY"]}",
+      :headers => { 'Content-Type' => 'application/json' },
+      :body => {"request"=>{"slice"=>[{"origin"=>"#{@start_code}","destination"=>"#{@end_code}","date"=>"#{@date}"}],"passengers"=>{"adultCount"=>1,"infantInLapCount"=>0,"infantInSeatCount"=>0,"childCount"=>0,"seniorCount"=>0},"solutions"=>1,"refundable"=>false}}.to_json
+    )
+  end
+
 end
