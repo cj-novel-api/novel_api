@@ -10,6 +10,7 @@ class Flight
 
   private def get_data
     HTTParty.post("https://www.googleapis.com/qpxExpress/v1/trips/search?key=#{ENV["GOOGLE_KEY"]}",
+      :headers => { 'Content-Type' => 'application/json' },
       :body => {
         "request": {
           "slice": [
@@ -29,8 +30,7 @@ class Flight
           "solutions": 1,
           "refundable": false
         }
-      }.to_json,
-      :headers => { 'Content-Type' => 'application/json' }
+      }.to_json
     )
   end
 
